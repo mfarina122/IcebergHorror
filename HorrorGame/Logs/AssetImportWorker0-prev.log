@@ -1,0 +1,189 @@
+Using pre-set license
+Built from '2021.1/release' branch; Version is '2021.1.0f1 (61a549675243) revision 6399305'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.1110; Version 2009; 64bit' Language: 'en' Physical Memory: 16299 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\HDD mass storage\Installed Programs\Unity\2021.1.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/HDD mass storage/GitHubDesktop/IcebergHorror/HorrorGame
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51750
+Successfully changed project path to: D:/HDD mass storage/GitHubDesktop/IcebergHorror/HorrorGame
+D:/HDD mass storage/GitHubDesktop/IcebergHorror/HorrorGame
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 71.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.0f1 (61a549675243)
+[Subsystems] Discovering subsystems at path D:/HDD mass storage/Installed Programs/Unity/2021.1.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/HDD mass storage/GitHubDesktop/IcebergHorror/HorrorGame/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c82)
+    Vendor:   NVIDIA
+    VRAM:     4018 MB
+    Driver:   27.21.14.5751
+Initialize mono
+Mono path[0] = 'D:/HDD mass storage/Installed Programs/Unity/2021.1.0f1/Editor/Data/Managed'
+Mono path[1] = 'D:/HDD mass storage/Installed Programs/Unity/2021.1.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/HDD mass storage/Installed Programs/Unity/2021.1.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56384
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/HDD mass storage/Installed Programs/Unity/2021.1.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004024 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 72.08 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.441 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004743 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.977 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2665 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.5 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3130.
+Total: 2.050200 ms (FindLiveObjects: 0.231900 ms CreateObjectMapping: 0.138800 ms MarkObjects: 1.607700 ms  DeleteObjects: 0.070900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Models/IceRock1.fbx
+  artifactKey: Guid(e003fb4e123a89f42b71d59e8ed04abc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/IceRock1.fbx using Guid(e003fb4e123a89f42b71d59e8ed04abc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16f1a0e9d322e59f6684dbd8c92dd504') in 0.332277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.547529 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(4cfe019140d79b6419a5f0f946e77c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(4cfe019140d79b6419a5f0f946e77c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ea67d3e5f5b2cb3f4e01da5a8a3681') in 0.025276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.989656 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(28d5140ac13031244b0c01d8abc07d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(28d5140ac13031244b0c01d8abc07d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da8c8b54ec04053bd94c01b47412b224') in 0.006199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 890.992369 seconds.
+  path: Assets/Models/ice2.fbx
+  artifactKey: Guid(23de02f51b53b0649a67237ebe3824c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ice2.fbx using Guid(23de02f51b53b0649a67237ebe3824c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd756f67573b871e63717052082c9cd55') in 0.025677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.240112 seconds.
+  path: Assets/Models/ice1.fbx
+  artifactKey: Guid(9c6532885b6fc154abd829fbbbfeb7c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ice1.fbx using Guid(9c6532885b6fc154abd829fbbbfeb7c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd883f9dcf4ffb73f4178f3056ce1ced') in 0.040023 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.015470 seconds.
+  path: Assets/Models/iceRock2.fbx
+  artifactKey: Guid(effc2ae95dc57054689329e378c0bc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/iceRock2.fbx using Guid(effc2ae95dc57054689329e378c0bc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd352803cf3d5115087eb44246c10a250') in 0.017103 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.442244 seconds.
+  path: Assets/Models/iceRock3.fbx
+  artifactKey: Guid(af618557ed469f249ab71acb5f4fa89f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/iceRock3.fbx using Guid(af618557ed469f249ab71acb5f4fa89f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2601ede230dee257bdcca895807cdef8') in 0.014868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.081360 seconds.
+  path: Assets/Models/iceRock4.fbx
+  artifactKey: Guid(077f0e736bb1fe8449c859c52321bc44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/iceRock4.fbx using Guid(077f0e736bb1fe8449c859c52321bc44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12d6934dddb8c93c4fd7f0ca6479ddb8') in 0.018988 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.275518 seconds.
+  path: Assets/Models/iceRock5.fbx
+  artifactKey: Guid(f9a1e20ddb8f8e94b8c9779178ddf913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/iceRock5.fbx using Guid(f9a1e20ddb8f8e94b8c9779178ddf913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec357bf4db26b3beccecb1ff22e7a3e8') in 0.019974 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004547 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.924 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2660 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.4 MB.
+System memory in use after: 113.6 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3176.
+Total: 2.244700 ms (FindLiveObjects: 0.259000 ms CreateObjectMapping: 0.190600 ms MarkObjects: 1.732000 ms  DeleteObjects: 0.061500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004406 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.927 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2660 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.5 MB.
+System memory in use after: 113.7 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3179.
+Total: 2.025300 ms (FindLiveObjects: 0.223200 ms CreateObjectMapping: 0.119600 ms MarkObjects: 1.598200 ms  DeleteObjects: 0.083000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 814.400728 seconds.
+  path: Assets/Materials/testingMaterial
+  artifactKey: Guid(6c9310dcfceeac549bdd8376d1a940be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/testingMaterial using Guid(6c9310dcfceeac549bdd8376d1a940be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8dec4fe6b5f663a829d470386e87253') in 0.010216 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005220 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.948 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2660 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.5 MB.
+System memory in use after: 113.7 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3182.
+Total: 2.025600 ms (FindLiveObjects: 0.219700 ms CreateObjectMapping: 0.125900 ms MarkObjects: 1.627900 ms  DeleteObjects: 0.051300 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
