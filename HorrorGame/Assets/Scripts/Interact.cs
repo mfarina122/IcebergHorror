@@ -2,28 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorInteract : MonoBehaviour
+public class Interact : MonoBehaviour
 {
     public playerInteractHandler interacter;
     [Tooltip("the object that can get highlited")]
     public Outline outlineableObject;
     [Space,Header("Settings")]
     public Animator doorAnimator;
-    public bool isOpen = false;
+    public string name_animationOn;
+    public string name_animationOff;
+    [Space]
+    public bool isOn = false;
     void Update()
     {
         if (interacter.isInteracting && outlineableObject.enabled)
         {
             interacter.isInteracting = false;
-            if (!isOpen)
+            if (!isOn)
             {
-                doorAnimator.Play("doorOPEN");
-                isOpen = true;
+                doorAnimator.Play(name_animationOn);
+                isOn = true;
             }
             else
             {
-                doorAnimator.Play("doorCLOSE");
-                isOpen = false;
+                doorAnimator.Play(name_animationOff);
+                isOn = false;
             }
         }
     }
