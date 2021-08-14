@@ -10,6 +10,8 @@ public class loadMap : MonoBehaviour
     [Tooltip("optional Animation"),Space]
     public Animator animator;
     public Animator animatorAudio;
+    [Space]
+    public bool isNewGame=false;
     [Tooltip("tempo da attendere prima di poter AVVIARE il livello")]
     public float timeToWait;
 
@@ -22,22 +24,24 @@ public class loadMap : MonoBehaviour
             if (animator != null)
             {
                 animator.enabled = true;
-                animator.Play("startLoading");
-                
-                if(animatorAudio!=null) animatorAudio.Play("playAudio");
+                if(!isNewGame)
+                    animator.Play("startLoading");
+                else
+                    animator.Play("newGame");
+
+                if (animatorAudio!=null) animatorAudio.Play("playAudio");
             }
 
             startTime = true;
+        }
 
+        if (startTime)
+            act_time += Time.deltaTime;
 
-            if (startTime)
-                act_time += Time.deltaTime;
-
-            if (act_time >= timeToWait)
-            {
-                StartCoroutine(LoadAsyncronously(sceneToLoad));
-                SceneManager.UnloadSceneAsync(0);
-            }
+        if (act_time >= timeToWait)
+        {
+            StartCoroutine(LoadAsyncronously(sceneToLoad));
+            SceneManager.UnloadSceneAsync(0);
         }
     }
 
