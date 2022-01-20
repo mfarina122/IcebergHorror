@@ -5,28 +5,55 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     public playerInteractHandler interacter;
-    [Tooltip("the object that can get highlited")]
+
+    [Space,Tooltip("the object that can get highlited"),SerializeField]
     public Outline outlineableObject;
+
     [Space,Header("Settings")]
-    public Animator doorAnimator;
+    public Animator animator;
     public string name_animationOn;
     public string name_animationOff;
+
     [Space]
     public bool isOn = false;
+
+
+    [HideInInspector]
+    public bool interactableFlag = true;
+    bool canAnimate = false;
+
+
+    private void Start()
+    {
+        if (animator != null &&
+            name_animationOn != "" &&
+            name_animationOff != "")
+        { canAnimate = true; }
+
+        if (!outlineableObject.tag.Equals("interactable")) { Debug.LogError("The object " + transform.name + " isn't tagged interactable. Can't perform <interact.cs>"); }
+        if (outlineableObject == null) { Debug.LogError("The object " + transform.name + " Doesn't have any <Outline.cs>. Can't perform <interact.cs>"); }
+        if (interacter == null) { Debug.LogError("The object " + transform.name + " Doesn't have any <playerInteractHandler.cs>. Can't perform <interact.cs>"); }
+    }
+
     void Update()
     {
-        if (interacter.isInteracting && outlineableObject.enabled)
+        if (interactableFlag)
         {
-            interacter.isInteracting = false;
-            if (!isOn)
+            if (interacter.isInteracting && outlineableObject.enabled)
             {
-                doorAnimator.Play(name_animationOn);
-                isOn = true;
-            }
-            else
-            {
-                doorAnimator.Play(name_animationOff);
-                isOn = false;
+                interacter.isInteracting = false;
+                if (!isOn)
+                {
+                    if(canAnimate)
+                        animator.Play(name_animationOn);
+                    isOn = true;
+                }
+                else
+                {
+                    if (canAnimate)
+                        animator.Play(name_animationOff);
+                    isOn = false;
+                }
             }
         }
     }

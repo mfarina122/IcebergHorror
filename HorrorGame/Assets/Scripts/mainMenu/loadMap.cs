@@ -14,25 +14,50 @@ public class loadMap : MonoBehaviour
     public bool isNewGame=false;
     [Tooltip("tempo da attendere prima di poter AVVIARE il livello")]
     public float timeToWait;
+    [Space,Tooltip("It will automatically load the level when script will be set enabled. Without button input")]
+    public bool isAutomatic = false;
 
     private float act_time=0;
     private bool startTime = false;
-    void Update()
+
+    private void Start()
     {
-        if (transform.GetComponent<buttonHandler>().clicked)
+        if (isAutomatic)
         {
             if (animator != null)
             {
                 animator.enabled = true;
-                if(!isNewGame)
+                if (!isNewGame)
                     animator.Play("startLoading");
                 else
                     animator.Play("newGame");
 
-                if (animatorAudio!=null) animatorAudio.Play("playAudio");
+                if (animatorAudio != null) animatorAudio.Play("playAudio");
             }
 
             startTime = true;
+        }
+    }
+
+    void Update()
+    {
+        if (!isAutomatic)
+        {
+            if (transform.GetComponent<buttonHandler>().clicked)
+            {
+                if (animator != null)
+                {
+                    animator.enabled = true;
+                    if (!isNewGame)
+                        animator.Play("startLoading");
+                    else
+                        animator.Play("newGame");
+
+                    if (animatorAudio != null) animatorAudio.Play("playAudio");
+                }
+
+                startTime = true;
+            }
         }
 
         if (startTime)
@@ -41,7 +66,7 @@ public class loadMap : MonoBehaviour
         if (act_time >= timeToWait)
         {
             StartCoroutine(LoadAsyncronously(sceneToLoad));
-            SceneManager.UnloadSceneAsync(0);
+            //SceneManager.UnloadSceneAsync(0);
         }
     }
 

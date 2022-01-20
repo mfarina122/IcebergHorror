@@ -65,35 +65,34 @@ public class SC_FPSController : MonoBehaviour
                 curSpeedX = walkingSpeed * Input.GetAxis("Vertical");
                 curSpeedY = walkingSpeed * Input.GetAxis("Horizontal");
             }
-        }
+        
 
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+            float movementDirectionY = moveDirection.y;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-
-
-        /*if (moveDirection == Vector3.zero) audioHandler.stopAudio();
-        else if (isRunning) { audioHandler.playRunningAudio(); }
-        else { audioHandler.playWalkingAudio(); }*/
+            /*if (moveDirection == Vector3.zero) audioHandler.stopAudio();
+            else if (isRunning) { audioHandler.playRunningAudio(); }
+            else { audioHandler.playWalkingAudio(); }*/
 
 
-        if (Input.GetKeyDown("space") && canMove && characterController.isGrounded)
-            moveDirection.y = jumpSpeed;
-        else
-            moveDirection.y = movementDirectionY;
+            if (Input.GetKeyDown("space") && canMove && characterController.isGrounded)
+                moveDirection.y = jumpSpeed;
+            else
+                moveDirection.y = movementDirectionY;
 
-        if (!characterController.isGrounded)
-            moveDirection.y -= gravity * Time.deltaTime;       
+            if (!characterController.isGrounded)
+                moveDirection.y -= gravity * Time.deltaTime;       
 
-        characterController.Move(moveDirection * Time.deltaTime);
+            characterController.Move(moveDirection * Time.deltaTime);
 
-        // Player and Camera rotation
-        if (canMove)
-        {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            // Player and Camera rotation
+            if (canMove)
+            {
+                rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+                rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+                playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+                transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            }
         }
     }
 }

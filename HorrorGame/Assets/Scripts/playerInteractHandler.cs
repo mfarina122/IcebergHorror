@@ -9,16 +9,23 @@ public class playerInteractHandler : MonoBehaviour
     [Tooltip("max distance witch player can interact with objects")]
     public float maxDistance;
     public KeyCode interactionKey;
+    public GameObject interactableText;
+    public LayerMask ignoreLayers;
+
     [HideInInspector]
     public bool isInteracting = false;
+    [HideInInspector]
+    public GameObject selectedDoor=null;
+    [HideInInspector]
+    public bool showInteractText = true;
 
-    private GameObject selectedDoor=null;
-    
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, maxDistance))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, maxDistance, ~ignoreLayers))
         {
+            if (!showInteractText) interactableText.active = false;
+
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward, Color.red);
             
             if (hit.transform.tag.Equals("interactable"))
@@ -26,12 +33,14 @@ public class playerInteractHandler : MonoBehaviour
                 selectedDoor = hit.transform.gameObject;
                 selectedDoor.GetComponent<Outline>().enabled = true;
 
+                interactableText.active = showInteractText?true:false;
+
                 if (Input.GetKeyDown(interactionKey)) isInteracting = true;
                 if (Input.GetKeyUp(interactionKey)) isInteracting = false;
             }
-            else { if (selectedDoor != null) selectedDoor.GetComponent<Outline>().enabled = false; }
+            else { if (selectedDoor != null) selectedDoor.GetComponent<Outline>().enabled = false; interactableText.active = false; }
         }
-        else { if (selectedDoor != null) selectedDoor.GetComponent<Outline>().enabled = false; }
+        else { if (selectedDoor != null) selectedDoor.GetComponent<Outline>().enabled = false; interactableText.active = false; }
 
         if (Input.GetKeyUp(interactionKey)) isInteracting = false;
     }
