@@ -5,12 +5,17 @@ using UnityEngine;
 public class sub_menuController : MonoBehaviour
 {
     public GameObject menu;
-    bool open = false;
+    public audioPlayer audio;
 
-    void Start()
+    public void openMenu() { menu.SetActive(!menu.activeSelf); audio.playAudio(); closeMenu(); }
+
+    public void closeMenu() 
     {
-        openMenu();
+        foreach (Transform child in transform.parent)
+        {
+            if(child.name.Contains("sMenu") && !child.name.Equals(menu.name))
+                child.gameObject.SetActive(false);
+        }
+        
     }
-
-    public void openMenu() { menu.SetActive(open); open = !open; }
 }

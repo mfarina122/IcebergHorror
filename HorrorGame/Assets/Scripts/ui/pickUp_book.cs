@@ -13,7 +13,13 @@ public class pickUp_book : MonoBehaviour
     public GameObject closeBookMessage;
     [Space]
     public KeyCode keyToCloseBook;
+    [Space]
+    public checkDPadUpdates updateLight;
+    [Space]
+    public audioPlayer audioOpen_book;
+    public audioPlayer audioClose_book;
 
+    GameObject dPadLight;
     TextMeshPro bookText;
     Animator bookAnimator;
     bool open = false;
@@ -29,6 +35,8 @@ public class pickUp_book : MonoBehaviour
         bookText = GetComponentInChildren<TextMeshPro>();
 
         closeBookMessage.active = false;
+
+        dPadLight = transform.GetChild(0).gameObject;
     }
 
     private void Update()
@@ -63,7 +71,14 @@ public class pickUp_book : MonoBehaviour
 
     private void performeAnimation(bool isOpen)
     {
+        if (isOpen)
+            audioOpen_book.playAudio();
+        else
+            audioClose_book.playAudio();
+
         bookAnimator.Play(isOpen?"openBook":"closeBook");
+        if(updateLight.isUpdate)
+            dPadLight.active = !dPadLight.activeSelf;
     }
 
     public void changeBookCover(GameObject book)

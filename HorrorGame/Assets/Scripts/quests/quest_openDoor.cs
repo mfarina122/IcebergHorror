@@ -8,6 +8,7 @@ public class quest_openDoor : MonoBehaviour
     [Header("The interactions")]
     [Tooltip("The object to interact with")]
     public Interact interactObject;
+    public quest_useHammer hammerQuest;
 
     printMessage message;
     playerInteractHandler interacter;
@@ -21,9 +22,14 @@ public class quest_openDoor : MonoBehaviour
 
     private void Update()
     {
-        if (interacter.isInteracting && interactObject.outlineableObject.enabled)
+        if (interacter.isInteracting && interactObject.outlineableObject.enabled && !hammerQuest.questEnded)
         {
             message.showMessage("It's stuck");
+        }
+        
+        if(hammerQuest.questEnded)
+        {
+            interactObject.interactableFlag = true;
         }
     }
 }

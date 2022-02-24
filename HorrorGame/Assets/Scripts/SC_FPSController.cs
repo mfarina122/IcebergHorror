@@ -20,7 +20,8 @@ public class SC_FPSController : MonoBehaviour
     public float lookXLimit = 45.0f;
 
     [Header("Audio settings")]
-    //public playerAudioHandler audioHandler;
+    public audioPlayer audioWalking;
+    public audioPlayer audioRunning;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -70,9 +71,9 @@ public class SC_FPSController : MonoBehaviour
             float movementDirectionY = moveDirection.y;
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-            /*if (moveDirection == Vector3.zero) audioHandler.stopAudio();
-            else if (isRunning) { audioHandler.playRunningAudio(); }
-            else { audioHandler.playWalkingAudio(); }*/
+            if (moveDirection == Vector3.zero) { audioWalking.stopAudio(); audioRunning.stopAudio(); }
+            else if (isRunning) { audioRunning.playAudio(); audioWalking.stopAudio(); }
+            else { audioWalking.playAudio(); audioRunning.stopAudio(); }
 
 
             if (Input.GetKeyDown("space") && canMove && characterController.isGrounded)

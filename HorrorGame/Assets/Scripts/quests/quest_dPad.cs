@@ -11,6 +11,8 @@ public class quest_dPad : MonoBehaviour
     [Space]
     public printMessage message;
     public GameObject messageDpad;
+    [Space]
+    public audioPlayer audio;
 
     playerInteractHandler interacter;
     bool destroyed = false;
@@ -33,12 +35,13 @@ public class quest_dPad : MonoBehaviour
             {
                 if (outlineableObject.enabled)
                 {
-                    message.showMessage("A useful multikit machine");
+                    message.showMessage("A useful multi-kit machine");
                 }
 
                 if (interacter.isInteracting && outlineableObject.enabled)
                 {
                     destroyed = true;
+                    audio.playAudio();
                     GameObject.Destroy(outlineableObject.gameObject.transform.parent.gameObject);
                 }
             }

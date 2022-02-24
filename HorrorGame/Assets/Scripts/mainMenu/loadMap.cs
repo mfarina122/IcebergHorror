@@ -16,6 +16,8 @@ public class loadMap : MonoBehaviour
     public float timeToWait;
     [Space,Tooltip("It will automatically load the level when script will be set enabled. Without button input")]
     public bool isAutomatic = false;
+    [Space, Tooltip("If true the script will be run only by an external input for example a button input (UI)")]
+    public bool isFunction = false;
 
     private float act_time=0;
     private bool startTime = false;
@@ -39,9 +41,25 @@ public class loadMap : MonoBehaviour
         }
     }
 
+    public void loadLevel()
+    {
+        if (animator != null)
+        {
+            animator.enabled = true;
+            if (!isNewGame)
+                animator.Play("startLoading");
+            else
+                animator.Play("newGame");
+
+            if (animatorAudio != null) animatorAudio.Play("playAudio");
+        }
+
+        startTime = true;
+    }
+
     void Update()
     {
-        if (!isAutomatic)
+        if (!isAutomatic && !isFunction)
         {
             if (transform.GetComponent<buttonHandler>().clicked)
             {

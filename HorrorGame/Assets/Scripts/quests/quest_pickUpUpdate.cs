@@ -7,10 +7,11 @@ public class quest_pickUpUpdate : MonoBehaviour
     [Tooltip("The outline object to interact with")]
     public Outline outlineableObject;
     public checkDPadUpdates updateChecker;
+    [Space]
+    public audioPlayer audio;
 
     playerInteractHandler interacter;
     printMessage message;
-    bool questEnded = false;
 
     private void Start()
     {
@@ -22,14 +23,13 @@ public class quest_pickUpUpdate : MonoBehaviour
 
     private void Update()
     {
-        if (questEnded) return;
-
         if (interacter.isInteracting && outlineableObject.enabled)
         {
             message.showMessage("d-Pad updated: flash-light");
             updateChecker.updateUpgrades();
+            audio.playAudio();
             GameObject.Destroy(outlineableObject.gameObject);
-            questEnded = true;
+            GetComponent<quest_pickUpUpdate>().enabled = false;
         }
     }
 }
