@@ -42,17 +42,26 @@ public class Interact : MonoBehaviour
             if (interacter.isInteracting && outlineableObject.enabled)
             {
                 interacter.isInteracting = false;
-                if (!isOn)
+                if (!animator.GetBool("isInteracting"))
                 {
-                    if(canAnimate)
-                        animator.Play(name_animationOn);
-                    isOn = true;
-                }
-                else
-                {
-                    if (canAnimate)
-                        animator.Play(name_animationOff);
-                    isOn = false;
+                    if (!isOn)
+                    {
+                        if (canAnimate)
+                        {
+                            animator.Play(name_animationOn);
+                            animator.SetBool("isInteracting", true);
+                        }
+                        isOn = true;
+                    }
+                    else
+                    {
+                        if (canAnimate)
+                        { 
+                            animator.Play(name_animationOff);
+                            animator.SetBool("isInteracting", true);
+                        }
+                        isOn = false;
+                    }
                 }
             }
         }
