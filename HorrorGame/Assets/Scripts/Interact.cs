@@ -17,11 +17,21 @@ public class Interact : MonoBehaviour
     [Space]
     public bool isOn = false;
 
+    [Space]
+    public GameObject collisionObject;
+
 
     [HideInInspector]
     public bool interactableFlag = true;
     bool canAnimate = false;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name.Equals(collisionObject))
+        {/////////////////////////
+            animator.speed = 0;
+        }
+    }
 
     private void Start()
     {
