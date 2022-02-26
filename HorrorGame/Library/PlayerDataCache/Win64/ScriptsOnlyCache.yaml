@@ -5,12 +5,15 @@ ScriptsOnlyBuild:
     - LowPolyWater.LowPolyWater
     - Outline
     - SC_FPSController
+    - audioFlags
     - audioPlay
+    - audioPlayer
     - buttonHandler
     - checkDPadUpdates
     - clock
     - continueBtn
     - exitGame
+    - interactChecker
     - lightSwitching
     - loadMap
     - open_dPad
@@ -28,7 +31,6 @@ ScriptsOnlyBuild:
     - text_book
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.ProBuilderEditor
-    - UnityEditor.ProBuilder.ProBuilderShapeEditor
     Unity.ProBuilder.dll:
     - UnityEngine.ProBuilder.ProBuilderMesh
     - UnityEngine.ProBuilder.Shapes.ProBuilderShape
@@ -45,10 +47,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -105,33 +105,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 2150}
+      Script: {instanceID: 2564}
     - Class: 114
-      Script: {instanceID: 2542}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 3148}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3852}
     - Class: 114
-      Script: {instanceID: 3872}
+      Script: {instanceID: 4290}
     - Class: 114
-      Script: {instanceID: 3970}
+      Script: {instanceID: 4388}
     - Class: 114
-      Script: {instanceID: 4218}
+      Script: {instanceID: 4636}
     - Class: 114
-      Script: {instanceID: 4438}
+      Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 4918}
-    - Class: 114
-      Script: {instanceID: 5052}
-    - Class: 114
-      Script: {instanceID: 5134}
+      Script: {instanceID: 5336}
     - Class: 114
       Script: {instanceID: 5472}
     - Class: 114
-      Script: {instanceID: 5946}
+      Script: {instanceID: 5554}
     - Class: 114
-      Script: {instanceID: 6902}
+      Script: {instanceID: 5892}
+    - Class: 114
+      Script: {instanceID: 6364}
+    - Class: 114
+      Script: {instanceID: 7318}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -202,31 +202,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 2276}
+      Script: {instanceID: 2690}
     - Class: 114
-      Script: {instanceID: 2542}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 3148}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 3426}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3514}
     - Class: 114
-      Script: {instanceID: 3180}
+      Script: {instanceID: 3598}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3852}
     - Class: 114
-      Script: {instanceID: 4918}
+      Script: {instanceID: 5336}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 5892}
     - Class: 114
-      Script: {instanceID: 5630}
+      Script: {instanceID: 6048}
     - Class: 114
-      Script: {instanceID: 5946}
+      Script: {instanceID: 6364}
     - Class: 114
-      Script: {instanceID: 6902}
+      Script: {instanceID: 7318}
     - Class: 114
-      Script: {instanceID: 6990}
+      Script: {instanceID: 7406}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -272,6 +272,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 84
       Script: {instanceID: 0}
     - Class: 89
@@ -289,63 +293,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 1592}
+      Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 1750}
+      Script: {instanceID: 2162}
     - Class: 114
-      Script: {instanceID: 1874}
+      Script: {instanceID: 2286}
     - Class: 114
-      Script: {instanceID: 2008}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2354}
+      Script: {instanceID: 2422}
     - Class: 114
-      Script: {instanceID: 2456}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 2542}
+      Script: {instanceID: 2870}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 3148}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3268}
     - Class: 114
-      Script: {instanceID: 4050}
+      Script: {instanceID: 3284}
     - Class: 114
-      Script: {instanceID: 4152}
+      Script: {instanceID: 3426}
     - Class: 114
-      Script: {instanceID: 4176}
+      Script: {instanceID: 3852}
     - Class: 114
-      Script: {instanceID: 4260}
+      Script: {instanceID: 4468}
     - Class: 114
-      Script: {instanceID: 4438}
+      Script: {instanceID: 4570}
     - Class: 114
-      Script: {instanceID: 4480}
+      Script: {instanceID: 4594}
     - Class: 114
-      Script: {instanceID: 4650}
+      Script: {instanceID: 4678}
     - Class: 114
-      Script: {instanceID: 4918}
+      Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 4898}
     - Class: 114
-      Script: {instanceID: 5630}
+      Script: {instanceID: 5068}
     - Class: 114
-      Script: {instanceID: 5652}
+      Script: {instanceID: 5336}
     - Class: 114
-      Script: {instanceID: 5694}
+      Script: {instanceID: 5360}
     - Class: 114
-      Script: {instanceID: 5946}
+      Script: {instanceID: 5892}
     - Class: 114
-      Script: {instanceID: 6042}
+      Script: {instanceID: 6048}
     - Class: 114
-      Script: {instanceID: 6104}
+      Script: {instanceID: 6070}
     - Class: 114
-      Script: {instanceID: 6902}
+      Script: {instanceID: 6112}
     - Class: 114
-      Script: {instanceID: 6984}
+      Script: {instanceID: 6364}
     - Class: 114
-      Script: {instanceID: 7052}
+      Script: {instanceID: 6460}
     - Class: 114
-      Script: {instanceID: 77688}
+      Script: {instanceID: 6522}
+    - Class: 114
+      Script: {instanceID: 7318}
+    - Class: 114
+      Script: {instanceID: 7400}
+    - Class: 114
+      Script: {instanceID: 7468}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -421,7 +431,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 14656961ec7eff7305e5d60fc1105cd7
+      Hash: 19096dc9c68aaf3d4b928c1b22a52462
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: quest_pickUpUpdate
@@ -457,10 +467,16 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
-      Hash: 62e70c842bc57bcfce09f8ead9819b54
+      Hash: 17868f0475f2537794ec16262cc11eef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: open_dPad
+  - hash:
+      serializedVersion: 2
+      Hash: 2629c2e057d6328b1937916ea20de620
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: audioFlags
   - hash:
       serializedVersion: 2
       Hash: 4144efb6092defc8313ad77a6ad228c7
@@ -523,7 +539,7 @@ ScriptsOnlyBuild:
     className: UnityOnBecameVisibleMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 0e5906d658f685d003c3fec165e75a87
+      Hash: 5d2ef03f641fc1f4be41b4276d88d49b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: quest_dPad
@@ -641,6 +657,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 4fdd587f4ee8bdabafd2812e6fa69b0b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: quest_useHammer
+  - hash:
+      serializedVersion: 2
+      Hash: 1098a45c9e13b929b9592efb261b0b28
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: audioPlayer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -907,13 +935,13 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: eacbced9f2ecd058224cf87cd421fd9f
+      Hash: 6944ba953e61ed9ada93c78d21276320
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SC_FPSController
   - hash:
       serializedVersion: 2
-      Hash: 35ec97400fd57993e189a9a878318af3
+      Hash: fa27155b6d8e7ceca096594fbad52b9d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: sub_menuController
@@ -1107,6 +1135,12 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: interactChecker
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
     className: TMP_DigitValidator
   - hash:
@@ -1207,7 +1241,7 @@ ScriptsOnlyBuild:
     className: checkDPadUpdates
   - hash:
       serializedVersion: 2
-      Hash: 2e283d7b17d01f6c22bbbce2b623f52c
+      Hash: 57f952bc8c021a1c66fd242135e008b4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Interact
@@ -1261,13 +1295,13 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 60567abd4602e4ddacdd0632f3cb2533
+      Hash: eae7b4c29c988a3fb6bf132e1e7a08ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pickUp_book
   - hash:
       serializedVersion: 2
-      Hash: 356dc0a3c05ccb17649c9602f092d1b1
+      Hash: c6fb4926f75fc08363e902e453aa00a9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: quest_openDoor
@@ -1547,12 +1581,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 7df6e7ffd9f1b36efaa0a5f8ebbd0a26
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: quest_useHammer
   platform: 19
   scenePathNames:
   - Assets/Scenes/main_menu.unity
