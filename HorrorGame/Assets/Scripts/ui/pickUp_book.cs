@@ -19,6 +19,7 @@ public class pickUp_book : MonoBehaviour
     public audioPlayer audioOpen_book;
     public audioPlayer audioClose_book;
 
+    public open_dPad dPadUser;
     GameObject dPadLight;
     TextMeshPro bookText;
     Animator bookAnimator;
@@ -77,7 +78,7 @@ public class pickUp_book : MonoBehaviour
             audioClose_book.playAudio();
 
         bookAnimator.Play(isOpen?"openBook":"closeBook");
-        if(updateLight.isUpdate)
+        if(updateLight.isUpdate && dPadUser.enabled)
             dPadLight.active = !dPadLight.activeSelf;
     }
 
