@@ -4,8 +4,8 @@
 <h1 align="center">IcebergHorror</h1>
 
 <p align="center">
-  a psx like horror experience on the most isolated place on earth.</br>
-  the Antartic Sea
+  A psx like horror experience on the most isolated place on earth.</br>
+  <a href="#">The Antartic Sea<a>
 </p>
 
 ##About This Game
