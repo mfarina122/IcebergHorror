@@ -4,35 +4,28 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+    [Tooltip("the entity that will interact with this object")]
     public playerInteractHandler interacter;
 
     [Space,Tooltip("the object that can get highlited"),SerializeField]
     public Outline outlineableObject;
 
     [Space,Header("Settings")]
+    [Tooltip("the animator of this object")]
     public Animator animator;
+    [Tooltip("the name of the animation that will perform when opened")]
     public string name_animationOn;
+    [Tooltip("the name of the animation that will perform when closed")]
     public string name_animationOff;
 
     [Space]
+    [Tooltip("the initial state of this object")]
     public bool isOn = false;
-
-    [Space]
-    public GameObject collisionObject;
-
 
     [HideInInspector]
     public bool interactableFlag = true;
     bool canAnimate = false;
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name.Equals(collisionObject))
-        {/////////////////////////
-            animator.speed = 0;
-        }
-    }
-
+ 
     private void Start()
     {
         if (animator != null &&

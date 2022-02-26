@@ -82,7 +82,7 @@ public class loadMap : MonoBehaviour
             act_time += Time.deltaTime;
 
         if (act_time >= timeToWait)
-        {
+        {Debug.Log("mammt");
             StartCoroutine(LoadAsyncronously(sceneToLoad));
             //SceneManager.UnloadSceneAsync(0);
         }
