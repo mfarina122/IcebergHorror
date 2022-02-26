@@ -1,10 +1,8 @@
-<div>
-  <p align="center">
-    <img src="https://github.com/mfarina122/IcebergHorror/blob/main/HorrorGame/Assets/Texture/github/Icewrecker_logo.png">
-  </p>
-  <h1 align="center">IcebergHorror</h1>
+<div align="center">
+  <img src="https://github.com/mfarina122/IcebergHorror/blob/main/HorrorGame/Assets/Texture/github/Icewrecker_logo.png">
+  <h1>IcebergHorror</h1>
 
-  <p align="center">
+  <p>
     A psx like horror experience on the most isolated place on earth.</br>
     <strong>The Antartic Sea</strong>
   </p>
