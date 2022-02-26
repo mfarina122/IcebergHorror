@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://github.com/mfarina122/IcebergHorror/blob/main/HorrorGame/Assets/Texture/github/Icewrecker_logo.png">
-  IcebergHorror
+  <h3>IcebergHorror</h3>
 
   <p>
     A psx like horror experience on the most isolated place on earth.</br>
