@@ -5,7 +5,7 @@
 
 <p align="center">
   A psx like horror experience on the most isolated place on earth.</br>
-  <a href="#">The Antartic Sea<a>
+  The Antartic Sea</strong>
 </p>
 
 ##About This Game
