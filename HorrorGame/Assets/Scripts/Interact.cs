@@ -9,10 +9,15 @@ public class Interact : MonoBehaviour
     [Space,Tooltip("the object that can get highlited"),SerializeField]
     public Outline outlineableObject;
 
-    [Space,Header("Settings")]
+    [Space,Header("Settings"),Tooltip("[can be null] ")]
     public Animator animator;
+    [Tooltip("[can be null] ")]
     public string name_animationOn;
+    [Tooltip("[can be null] ")]
     public string name_animationOff;
+
+    [Space,Header("Sound triggerer monster"),Tooltip("[can be null] the sound setter that will be trggered when player interact with something")]
+    public objectSoundSetter sounds;
 
     [Space]
     public bool isOn = false;
@@ -21,6 +26,7 @@ public class Interact : MonoBehaviour
     [HideInInspector]
     public bool interactableFlag = true;
     bool canAnimate = false;
+    bool canSound = false;
 
 
     private void Start()
@@ -29,6 +35,8 @@ public class Interact : MonoBehaviour
             name_animationOn != "" &&
             name_animationOff != "")
         { canAnimate = true; }
+
+        if (sounds != null) { canSound = true; }
 
         if (!outlineableObject.tag.Equals("interactable")) { Debug.LogError("The object " + transform.name + " isn't tagged interactable. Can't perform <interact.cs>"); }
         if (outlineableObject == null) { Debug.LogError("The object " + transform.name + " Doesn't have any <Outline.cs>. Can't perform <interact.cs>"); }
@@ -51,6 +59,10 @@ public class Interact : MonoBehaviour
                             animator.Play(name_animationOn);
                             animator.SetBool("isInteracting", true);
                         }
+                        
+                        if (canSound)
+                        { sounds.activateSound(); }
+
                         isOn = true;
                     }
                     else
@@ -60,6 +72,10 @@ public class Interact : MonoBehaviour
                             animator.Play(name_animationOff);
                             animator.SetBool("isInteracting", true);
                         }
+
+                        if (canSound)
+                            sounds.activateSound();
+
                         isOn = false;
                     }
                 }
