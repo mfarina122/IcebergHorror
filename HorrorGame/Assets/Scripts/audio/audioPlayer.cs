@@ -37,7 +37,6 @@ public class audioPlayer : MonoBehaviour
 
             if (isTime)
                 source.time=timeSplits[randomAudio];
-
             source.Play();
         }
     }

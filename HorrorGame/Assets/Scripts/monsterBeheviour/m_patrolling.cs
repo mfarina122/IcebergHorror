@@ -18,12 +18,15 @@ public class m_patrolling : MonoBehaviour
     [Space]
     public Animator animator;
     public SphereCollider playerCollider;
-
+    [Header("AudioController")]
+    public audioPlayer monsterAudioPatrolling;
+    public audioPlayer monsterAudioAggressive;
     bool startTimeRandomizer = true;
     int randomTime;
     float act_time = 0;
     float baseSpeed;
     bool enlargeRadious = false;
+    bool aggressive = false;
     float originalRadious;
 
     private void OnTriggerStay(Collider other)
@@ -31,7 +34,7 @@ public class m_patrolling : MonoBehaviour
         if (other.tag.Equals("Player"))
         {
             if (!enlargeRadious)
-            { playerCollider.radius *= 2; enlargeRadious = true; }
+            { playerCollider.radius *= 2; enlargeRadious = true; aggressive = true;}
             soundTriggered(other.transform);
         }
     }
@@ -42,21 +45,24 @@ public class m_patrolling : MonoBehaviour
         {
             playerCollider.radius /= 2;
             soundTriggered(other.transform);
-
             enlargeRadious = false;
+            aggressive = false;
         }
     }
 
-    void Start() { baseSpeed = agent.speed; originalRadious = playerCollider.radius; }
+    void Start() { baseSpeed = agent.speed; originalRadious = playerCollider.radius;}
 
     void Update()
     {
         playerAmplifier();
-
+        if(!aggressive){
+             monsterAudioPatrolling.playAudio();
+        }
+        if(aggressive){
+            monsterAudioAggressive.playAudio();
+        }
         float speed = agent.velocity.magnitude;
-
         animator.SetFloat("Vertical",speed);
-
         float dist = agent.remainingDistance;
         if (dist < 0.5f)
         {
@@ -85,7 +91,6 @@ public class m_patrolling : MonoBehaviour
         }
 
     }
-
     private void timeRandomizer(Vector2 time)
     {
         act_time = 0;

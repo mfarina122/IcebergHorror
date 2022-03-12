@@ -9,6 +9,8 @@ public class ques_firstSpawnMonster : MonoBehaviour
     [Space]
     public GameObject monster_Cutscene;
     public NavMeshAgent agent;
+    [Header("AudioMonsterFirstEncounter")]
+    public AudioSource firstCry;
     public Transform destination;
     public Animator animator;
     [Space]
@@ -34,6 +36,7 @@ public class ques_firstSpawnMonster : MonoBehaviour
                 invisibleWall.enabled = true;
                 water.SetActive(false);
                 monster_Cutscene.SetActive(true);
+                firstCry.Play();
                 stop = true; 
             }
     }

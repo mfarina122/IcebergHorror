@@ -18,7 +18,7 @@ public class Interact : MonoBehaviour
 
     [Space,Header("Sound triggerer monster"),Tooltip("[can be null] the sound setter that will be trggered when player interact with something")]
     public objectSoundSetter sounds;
-
+    public audioPlayer audioPlayer;
     [Space]
     public bool isOn = false;
     
@@ -58,11 +58,14 @@ public class Interact : MonoBehaviour
                         {
                             animator.Play(name_animationOn);
                             animator.SetBool("isInteracting", true);
+                            if(audioPlayer != null)
+                            audioPlayer.playAudio();
                         }
                         
                         if (canSound)
-                        { sounds.activateSound(); }
-
+                        { 
+                            sounds.activateSound(); 
+                        }
                         isOn = true;
                     }
                     else
@@ -71,11 +74,13 @@ public class Interact : MonoBehaviour
                         { 
                             animator.Play(name_animationOff);
                             animator.SetBool("isInteracting", true);
+                            if(audioPlayer != null)
+                            audioPlayer.playAudio();
                         }
 
-                        if (canSound)
+                        if (canSound){
                             sounds.activateSound();
-
+                        }
                         isOn = false;
                     }
                 }
