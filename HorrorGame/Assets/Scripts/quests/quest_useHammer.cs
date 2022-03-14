@@ -18,7 +18,8 @@ public class quest_useHammer : MonoBehaviour
     public bool questEnded = false;
     bool fall = false;
     playerInteractHandler interacter;
-
+    [Space]
+    public audioPlayer hammerHit;
     private void Start()
     {
         interacter = GameObject.Find("player").GetComponent<playerInteractHandler>();
@@ -41,6 +42,7 @@ public class quest_useHammer : MonoBehaviour
         if (interacter.isInteracting && pipeOutline.enabled)
         {
             hammerAnimator2.Play("destroy_pipe");
+            hammerHit.playAudio();
             questEnded = true;
         }
     }
