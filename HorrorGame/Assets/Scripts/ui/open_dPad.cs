@@ -52,13 +52,13 @@ public class open_dPad : MonoBehaviour
 
                 open = !open;
             }
-
+            
             if (Input.GetKeyDown(KeyCode.L) && isFlashLight && flashLightUpdateChecker.isUpdate)
             {
                 if (!open)
-                { performeAnimation("open_light"); audio.playAudio(); lightBook.active = true; }
+                { performeAnimation("open_light"); animator.SetBool("isD-PadVisible",true); audio.playAudio(); lightBook.active = true; }
                 else
-                { performeAnimation("close_light"); audio_2.playAudio(); lightBook.active = false; }
+                { performeAnimation("close_light"); animator.SetBool("isD-PadVisible", false); audio_2.playAudio(); lightBook.active = false; }
 
                 open = !open;
             }

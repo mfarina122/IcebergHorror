@@ -17,7 +17,7 @@ public class objectSoundSetter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.tag.Equals("monster"))
-        { patrolling.soundTriggered(transform); }
+        { if(patrolling.enabled) patrolling.soundTriggered(transform); }
     }
 
     void Start()

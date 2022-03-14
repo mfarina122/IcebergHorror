@@ -17,7 +17,8 @@ public class quest_dPad : MonoBehaviour
     playerInteractHandler interacter;
     bool destroyed = false;
     float time = 0;
-    bool questEnded = false;
+    [HideInInspector]
+    public bool questEnded = false;
 
     private void Start()
     {
@@ -42,7 +43,7 @@ public class quest_dPad : MonoBehaviour
                 {
                     destroyed = true;
                     audio.playAudio();
-                    GameObject.Destroy(outlineableObject.gameObject.transform.parent.gameObject);
+                    destroyDPadProp();
                 }
             }
 
@@ -58,6 +59,7 @@ public class quest_dPad : MonoBehaviour
                 dpad_light_controller.enabled = true;
             }
         }
-
     }
+
+    public void destroyDPadProp() { GameObject.Destroy(outlineableObject.gameObject.transform.parent.gameObject); }
 }

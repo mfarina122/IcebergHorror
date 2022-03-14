@@ -94,7 +94,7 @@ public class loadMap : MonoBehaviour
 
         while (!op.isDone)
         {
-            Debug.Log(op.progress);
+            //Debug.Log(op.progress);
 
             yield return null;
         }

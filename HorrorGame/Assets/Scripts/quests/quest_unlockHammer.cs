@@ -7,9 +7,11 @@ public class quest_unlockHammer : MonoBehaviour
     public quest_pickUpItem itemPicker;
     public Outline outlineableObject;
     public Animator animator;
+    public audioPlayer audioPlayer;
+
+
     playerInteractHandler interacter;
     printMessage message;
-    public audioPlayer audioPlayer;
     private void Start()
     {
         if (!outlineableObject.tag.Equals("interactable")) Debug.LogError("The object with outline is not interactable");

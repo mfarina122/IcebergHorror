@@ -25,7 +25,10 @@ public class pickUp_book : MonoBehaviour
     public audioPlayer audioOpen_book;
     public audioPlayer audioClose_book;
 
-    GameObject dPadLight;
+    [Space]
+    public GameObject dPadLight;
+
+
     GameObject zoomBookContainer_noLightUpdate;
     TextMeshPro bookText;
     TextMeshProUGUI zoomBookText;
@@ -50,7 +53,7 @@ public class pickUp_book : MonoBehaviour
         zoomBookMessage.SetActive(false);
         zoomBookContainer_noLightUpdate.SetActive(true);
 
-        dPadLight = transform.GetChild(0).gameObject;
+        //dPadLight = GameObject.Find("d-padLight");
     }
 
     private void Update()

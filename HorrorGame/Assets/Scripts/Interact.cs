@@ -19,12 +19,15 @@ public class Interact : MonoBehaviour
     [Space,Header("Sound triggerer monster"),Tooltip("[can be null] the sound setter that will be trggered when player interact with something")]
     public objectSoundSetter sounds;
     public audioPlayer audioPlayer;
+
     [Space]
     public bool isOn = false;
     
-
     [HideInInspector]
     public bool interactableFlag = true;
+    [HideInInspector]
+    public bool forceAnimationStateUpdate = false;
+
     bool canAnimate = false;
     bool canSound = false;
 
@@ -41,6 +44,15 @@ public class Interact : MonoBehaviour
         if (!outlineableObject.tag.Equals("interactable")) { Debug.LogError("The object " + transform.name + " isn't tagged interactable. Can't perform <interact.cs>"); }
         if (outlineableObject == null) { Debug.LogError("The object " + transform.name + " Doesn't have any <Outline.cs>. Can't perform <interact.cs>"); }
         if (interacter == null) { Debug.LogError("The object " + transform.name + " Doesn't have any <playerInteractHandler.cs>. Can't perform <interact.cs>"); }
+
+        if(canAnimate)
+            if (forceAnimationStateUpdate)
+            {
+                if (isOn) animator.Play(name_animationOn + "_forced", 0, 1);
+                else animator.Play(name_animationOff + "_forced", 0, 1);           
+            }
+
+        forceAnimationStateUpdate = false;
     }
 
     void Update()
@@ -58,14 +70,14 @@ public class Interact : MonoBehaviour
                         {
                             animator.Play(name_animationOn);
                             animator.SetBool("isInteracting", true);
-                            if(audioPlayer != null)
-                            audioPlayer.playAudio();
+
+                            if (audioPlayer != null)
+                                audioPlayer.playAudio();
                         }
                         
                         if (canSound)
-                        { 
-                            sounds.activateSound(); 
-                        }
+                        { sounds.activateSound(); }
+
                         isOn = true;
                     }
                     else
@@ -74,13 +86,14 @@ public class Interact : MonoBehaviour
                         { 
                             animator.Play(name_animationOff);
                             animator.SetBool("isInteracting", true);
-                            if(audioPlayer != null)
-                            audioPlayer.playAudio();
+
+                            if (audioPlayer != null)
+                                audioPlayer.playAudio();
                         }
 
-                        if (canSound){
+                        if (canSound)
                             sounds.activateSound();
-                        }
+
                         isOn = false;
                     }
                 }

@@ -6,13 +6,16 @@ using UnityEngine.AI;
 public class ques_firstSpawnMonster : MonoBehaviour
 {
     public GameObject monster;
+
     [Space]
     public GameObject monster_Cutscene;
     public NavMeshAgent agent;
-    [Header("AudioMonsterFirstEncounter")]
+    
+    [Space,Header("AudioMonsterFirstEncounter")]
     public AudioSource firstCry;
     public Transform destination;
     public Animator animator;
+    
     [Space]
     public BoxCollider invisibleWall;
     public GameObject water;
@@ -37,7 +40,7 @@ public class ques_firstSpawnMonster : MonoBehaviour
                 water.SetActive(false);
                 monster_Cutscene.SetActive(true);
                 firstCry.Play();
-                stop = true; 
+                stop = true;
             }
     }
 
@@ -51,7 +54,7 @@ public class ques_firstSpawnMonster : MonoBehaviour
                 animator.SetFloat("Vertical", speed);
 
                 agent.SetDestination(destination.position);
-                
+
                 if (agent.remainingDistance < 0.6f && agent.remainingDistance != 0)
                 {
                     monster_Cutscene.SetActive(false);

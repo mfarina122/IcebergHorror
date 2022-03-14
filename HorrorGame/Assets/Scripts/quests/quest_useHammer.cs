@@ -14,8 +14,6 @@ public class quest_useHammer : MonoBehaviour
     public GameObject pipe;
     public Outline pipeOutline;
 
-    public audioPlayer audioPlayer;
-
     [HideInInspector]
     public bool questEnded = false;
     bool fall = false;
@@ -43,7 +41,6 @@ public class quest_useHammer : MonoBehaviour
         if (interacter.isInteracting && pipeOutline.enabled)
         {
             hammerAnimator2.Play("destroy_pipe");
-            audioPlayer.playAudio();
             questEnded = true;
         }
     }
